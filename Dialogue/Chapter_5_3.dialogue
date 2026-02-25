@@ -1,0 +1,17 @@
+~ Chapter_5_3
+Echidna: Hey....are you...ok?
+Narrator: Echidna is extremely tired from the charge process
+Stranger: ...
+do play_first_animation()
+Echidna: Ahhhhh!
+Narrator: The stranger punches Echidna....WAIT WHAT? THE STRANGER PUNCHES ECHIDNA???!!!
+Stranger: You're not gonna trick me again Citela
+Echidna: What....What the hell...is...your...problem?
+Stranger: Fool me once shame on me, fool me twice shame on me, but you're not gonna get me a third time
+Echidna: What... what does that... even mean?
+do play_second_animation()
+*Falls Unconsious*
+Narrator: Echidna falls unconsious due to fatigued...
+TO BE CONTINUED...
+Narrator: What kind of ending is this?
+=> END

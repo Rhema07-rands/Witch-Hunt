@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://4xj8tdi88uef"]
+
+[ext_resource type="Texture2D" uid="uid://ch52f8qxcimwo" path="res://Brawler-Girl/Idle/idle1.png" id="1_bppqf"]
+[ext_resource type="Texture2D" uid="uid://exs27rcs1s83" path="res://Brawler-Girl/Idle/idle2.png" id="2_v70tu"]
+[ext_resource type="Texture2D" uid="uid://j6wv5sr36mej" path="res://Brawler-Girl/Idle/idle3.png" id="3_gpni3"]
+[ext_resource type="Texture2D" uid="uid://deahql8dqvf35" path="res://Brawler-Girl/Idle/idle4.png" id="4_akf6e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s2p84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bppqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v70tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gpni3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_akf6e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Sisters Friend" type="Node2D"]
+
+[node name="Sister\'s Friend" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s2p84")
+autoplay = "default"
+frame_progress = 0.228526

@@ -1,0 +1,39 @@
+~ Chapter_1_5
+Narrator: You hear a crackling sound.
+Echidna: Um...Hello?
+Echidna: Is anyone there?
+Echidna: Citela? Are you there?
+Citela: BOOO!!!
+Echidna: AHHHHH WTF??!!
+do play_first_animation()
+Citela: *Loud Laughter* Ha! I gat you!!
+- Retaliate
+	Echidna: YOU FUCKING RETARD! YOU ALMOST GAVE ME A HEART ATTACK!!
+	Citela: Hey I was just messing with you, Why are you being so mean?
+	- Call out her BS...
+		Echidna: FUCK YOU BITCH! I HOPE YOU DIE IN THE WOODS!!
+		Citela: Woah Ok I'm sorry, it wont happen again.
+		Echidna: Sigh*...I'm sorry for lashing out like that.
+		Echidna: Come on lets go home, I already made dinner.
+	- Forget About it~
+		Echidna: SIgh*...
+		Echidna: You're annoying sometimes, you know?
+		Citela: Yeah I know, but you love me.
+		Echidna: Tch! Lets go home, I already made dinner. 
+- Forget About It~
+	Echidna: SIgh*...
+	Echidna: You're annoying sometimes, you know?
+	Citela: Yeah I know, but you love me.
+	Echidna: Tch! Lets go home, I already made dinner.
+Citela: Dinner? But the Sun is still up?
+Echidna: You cant be serious.
+Citela: What?
+Echidna: Did you forget about what happens at night?
+Citela: .....Oh.
+Echidna: Exactly.
+Echidna: Lets get back before the forest "AWAKENS".
+Citela: I understand.
+do play_second_animation()
+UNKNOWN: *Russle Russle*
+Narrator: Something watches from a distance
+=> END

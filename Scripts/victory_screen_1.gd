@@ -1,0 +1,23 @@
+extends Control
+signal level_completed(level_name: String)
+@export var level_name := "stage2"
+@export var next_level_name := "stage3"
+var random_text = ["Good Job, Want A Cookie With That?", "Is That The Best You Can Do?", "You Call That A Playthrough?", "Tf Was That?", "Do You Play Games To Pretend To Be Smart?"]
+@onready var animation_player: AnimationPlayer = $"Victory Screen/AnimationPlayer"
+@onready var victory_label: Label = $"Victory Screen/Victory Label"
+@onready var next_stage: TextureButton = $"Victory Screen/Next Stage"
+@onready var congrats: Label = $"Victory Screen/Congrats"
+
+func _ready():
+	SaveManager.save_progress()
+	congrats.text = random_text.pick_random()
+	animation_player.play("pop_up")
+
+
+func _on_next_stage_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/black_screen_null.tscn")
+	SaveManager.save_progress()
+	SaveManager.save_data_to_file()
+	SaveManager.mark_level_complete(level_name)
+	SaveManager.save_progress()
+	emit_signal("level_completed", level_name)

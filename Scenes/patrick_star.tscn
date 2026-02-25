@@ -1,0 +1,316 @@
+[gd_scene load_steps=44 format=3 uid="uid://ca7kl6j2bp3pb"]
+
+[ext_resource type="Script" uid="uid://bdx6iine4cost" path="res://Scripts/patrick_star.gd" id="1_aj3mv"]
+[ext_resource type="Texture2D" uid="uid://crq170u8u5sq5" path="res://Health Icon en.png" id="1_ew1yd"]
+[ext_resource type="Texture2D" uid="uid://dt2lcgavq20iu" path="res://Health Icon Bar 1.png" id="2_aj3mv"]
+[ext_resource type="Script" uid="uid://c6a4qac0f7bm0" path="res://Scripts/orc_state_machine.gd" id="3_imwqy"]
+[ext_resource type="Script" uid="uid://ddwvccfgrpifm" path="res://Scripts/orc_idle.gd" id="4_qccg1"]
+[ext_resource type="Script" uid="uid://dxjeqpn8pn2bb" path="res://Scripts/star_attack.gd" id="6_aj3mv"]
+[ext_resource type="Script" uid="uid://np40mss3llxp" path="res://Scripts/orc_chase.gd" id="6_m2hse"]
+[ext_resource type="Script" uid="uid://nrshks2drk03" path="res://Scripts/orc_death.gd" id="7_1e6p0"]
+[ext_resource type="Script" uid="uid://d0p3kes70tygh" path="res://Scripts/orc_hurt.gd" id="8_ouo55"]
+[ext_resource type="Script" uid="uid://dv1qbrxeuq268" path="res://Scripts/orc_taunt.gd" id="9_ev4tk"]
+[ext_resource type="Texture2D" uid="uid://q8jpga7anb3t" path="res://Pink Star/07-Attack/Attack 01.png" id="10_0a30j"]
+[ext_resource type="Texture2D" uid="uid://ckfhlb72dd7wx" path="res://Pink Star/07-Attack/Attack 02.png" id="11_jwrg1"]
+[ext_resource type="Texture2D" uid="uid://dd3apt01m8g31" path="res://Pink Star/07-Attack/Attack 03.png" id="12_3lmi8"]
+[ext_resource type="Texture2D" uid="uid://dm7lyovqdq71" path="res://Pink Star/07-Attack/Attack 04.png" id="13_gfqdr"]
+[ext_resource type="Texture2D" uid="uid://d3utcxngxt046" path="res://Pink Star/09-Dead Hit/Dead Hit 01.png" id="14_iuu4r"]
+[ext_resource type="Texture2D" uid="uid://cjl5xq4811gho" path="res://Pink Star/09-Dead Hit/Dead Hit 02.png" id="15_irmvs"]
+[ext_resource type="Texture2D" uid="uid://brrencbw7ya4m" path="res://Pink Star/09-Dead Hit/Dead Hit 03.png" id="16_no5ty"]
+[ext_resource type="Texture2D" uid="uid://dsxxtwnju0q0x" path="res://Pink Star/09-Dead Hit/Dead Hit 04.png" id="17_p757w"]
+[ext_resource type="Texture2D" uid="uid://d5actfsuuriw" path="res://Pink Star/08-Hit/Hit 01.png" id="18_fgvp8"]
+[ext_resource type="Texture2D" uid="uid://dn30cbt08qdqr" path="res://Pink Star/08-Hit/Hit 02.png" id="19_13xtb"]
+[ext_resource type="Texture2D" uid="uid://cpdxbqbd8g4ii" path="res://Pink Star/08-Hit/Hit 03.png" id="20_scqhq"]
+[ext_resource type="Texture2D" uid="uid://dvivu2jpfo8ae" path="res://Pink Star/08-Hit/Hit 04.png" id="21_hfeob"]
+[ext_resource type="Texture2D" uid="uid://bhb8bt75bl0yn" path="res://Pink Star/01-Idle/Idle 01.png" id="22_6uobv"]
+[ext_resource type="Texture2D" uid="uid://3q5hbhm2hy8d" path="res://Pink Star/01-Idle/Idle 02.png" id="23_0cwnk"]
+[ext_resource type="Texture2D" uid="uid://m7s6khohqtoq" path="res://Pink Star/01-Idle/Idle 03.png" id="24_ioxf5"]
+[ext_resource type="Texture2D" uid="uid://bdly6vifv0o4r" path="res://Pink Star/01-Idle/Idle 04.png" id="25_kk2oa"]
+[ext_resource type="Texture2D" uid="uid://dtfutpbj543k" path="res://Pink Star/01-Idle/Idle 05.png" id="26_e4r4a"]
+[ext_resource type="Texture2D" uid="uid://ykaw415hsanw" path="res://Pink Star/01-Idle/Idle 06.png" id="27_ddk51"]
+[ext_resource type="Texture2D" uid="uid://5rg7bijg4jwe" path="res://Pink Star/01-Idle/Idle 07.png" id="28_svvim"]
+[ext_resource type="Texture2D" uid="uid://cuvu3edc044yj" path="res://Pink Star/01-Idle/Idle 08.png" id="29_hnh6c"]
+[ext_resource type="Texture2D" uid="uid://cnqmnm1mkwklo" path="res://Pink Star/02-Run/Run 01.png" id="30_a1gx7"]
+[ext_resource type="Texture2D" uid="uid://b5atna4dbsqx5" path="res://Pink Star/02-Run/Run 02.png" id="31_5t25r"]
+[ext_resource type="Texture2D" uid="uid://5wgdo02y6y4i" path="res://Pink Star/02-Run/Run 03.png" id="32_nnllt"]
+[ext_resource type="Texture2D" uid="uid://d2407yx1h4krw" path="res://Pink Star/02-Run/Run 04.png" id="33_qev4q"]
+[ext_resource type="Texture2D" uid="uid://bncpm1gythgnb" path="res://Pink Star/02-Run/Run 05.png" id="34_dggni"]
+[ext_resource type="Texture2D" uid="uid://dunqhmbb821st" path="res://Pink Star/02-Run/Run 06.png" id="35_xkotq"]
+[ext_resource type="Script" uid="uid://mad0ff37dbvg" path="res://Scripts/HealthComponentenmystar.gd" id="37_aj3mv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lr2ji"]
+bg_color = Color(0.490196, 0.227451, 0.278431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgha7"]
+bg_color = Color(0.862745, 0.286275, 0.286275, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5nl08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0a30j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jwrg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3lmi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gfqdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0a30j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jwrg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3lmi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gfqdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0a30j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jwrg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3lmi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gfqdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0a30j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jwrg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3lmi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gfqdr")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_iuu4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_irmvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_no5ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_p757w")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_fgvp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_13xtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_scqhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hfeob")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_6uobv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0cwnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ioxf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_kk2oa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_e4r4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ddk51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_svvim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hnh6c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_a1gx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5t25r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_nnllt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_qev4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dggni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xkotq")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"taunt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_a1gx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5t25r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_nnllt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_qev4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dggni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xkotq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kegfe"]
+radius = 16.0
+height = 48.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e505w"]
+size = Vector2(251, 84)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2niw2"]
+radius = 38.9487
+
+[node name="PatrickStar" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_aj3mv")
+
+[node name="OrcHealthBar UI" type="Node2D" parent="."]
+z_index = 1
+
+[node name="OrcHealthBar" type="ProgressBar" parent="OrcHealthBar UI"]
+offset_left = -16.0
+offset_top = -36.0
+offset_right = 27.0
+offset_bottom = -33.0
+theme_override_styles/background = SubResource("StyleBoxFlat_lr2ji")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wgha7")
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthIconEn" type="Sprite2D" parent="OrcHealthBar UI"]
+position = Vector2(-17, -36)
+texture = ExtResource("1_ew1yd")
+
+[node name="HealthIconBar1" type="Sprite2D" parent="OrcHealthBar UI"]
+position = Vector2(15, -34)
+texture = ExtResource("2_aj3mv")
+
+[node name="Orc State Machine" type="Node" parent="."]
+script = ExtResource("3_imwqy")
+
+[node name="OrcIdle" type="Node" parent="Orc State Machine"]
+script = ExtResource("4_qccg1")
+
+[node name="OrcAttack" type="Node" parent="Orc State Machine"]
+script = ExtResource("6_aj3mv")
+
+[node name="OrcChase" type="Node" parent="Orc State Machine"]
+script = ExtResource("6_m2hse")
+
+[node name="OrcDeath" type="Node" parent="Orc State Machine"]
+script = ExtResource("7_1e6p0")
+
+[node name="OrcHurt" type="Node" parent="Orc State Machine"]
+script = ExtResource("8_ouo55")
+
+[node name="OrcTaunt" type="Node" parent="Orc State Machine"]
+script = ExtResource("9_ev4tk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(2.25, 2.58)
+sprite_frames = SubResource("SpriteFrames_5nl08")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 11)
+shape = SubResource("CapsuleShape2D_kegfe")
+
+[node name="Detection Area" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="Detection Area Collision" type="CollisionShape2D" parent="Detection Area"]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_e505w")
+
+[node name="Attack Area" type="Area2D" parent="."]
+position = Vector2(-2, 0)
+collision_layer = 8
+
+[node name="Attack Area Collision" type="CollisionShape2D" parent="Attack Area"]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_2niw2")
+
+[node name="Attack Area Collision2" type="CollisionShape2D" parent="Attack Area"]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_2niw2")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("37_aj3mv")
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+
+[node name="Attack Area Collision3" type="CollisionShape2D" parent="AttackHitbox"]
+shape = SubResource("CircleShape2D_2niw2")
+
+[node name="Attack Area Collision4" type="CollisionShape2D" parent="AttackHitbox"]
+shape = SubResource("CircleShape2D_2niw2")
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="Orc State Machine/OrcAttack" method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="body_entered" from="AttackHitbox" to="Orc State Machine/OrcAttack" method="_on_attack_hitbox_body_entered"]

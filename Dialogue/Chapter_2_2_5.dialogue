@@ -1,0 +1,8 @@
+~ Chapter_2_2_5
+do play_first_animation()
+Echidna: Hey Slime Spirit, I'm about to whoop your ass.
+do play_second_animation()
+Slime Spirit: I'd like to see you try.
+do! play_third_animation()
+Slime Spirit: HAHAHAHAHAHAHAHA!!!!!!
+=> END

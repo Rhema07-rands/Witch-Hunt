@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7gbiah8jnppr"]
+
+[ext_resource type="Script" uid="uid://cgbcd12n76fw2" path="res://Scripts/chapter_1_6.gd" id="1_w8ggf"]
+[ext_resource type="Resource" uid="uid://c56cphl0kss6h" path="res://Dialogue/Chapter_1_6.dialogue" id="2_vsykk"]
+[ext_resource type="PackedScene" uid="uid://cdh23w6xe4a6b" path="res://Scenes/chapter_1_7.tscn" id="3_k3dr8"]
+[ext_resource type="Texture2D" uid="uid://dj72ok8ui1ggh" path="res://Menu/Buttons/Next.png" id="4_5feg5"]
+
+[node name="Chapter 1 6" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w8ggf")
+dialogue_file = ExtResource("2_vsykk")
+Skip = ExtResource("3_k3dr8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="skip button" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1239.0
+offset_top = 20.0
+offset_right = 1279.0
+offset_bottom = 60.0
+texture_normal = ExtResource("4_5feg5")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://m7hss0a70cet"]
+
+[ext_resource type="Script" uid="uid://4bwvrggpmjsh" path="res://Scripts/chapter_2.gd" id="1_k2fqk"]
+[ext_resource type="Resource" uid="uid://be7kowfos7q4j" path="res://Dialogue/Chapter_2.dialogue" id="2_aq7sr"]
+
+[node name="Chapter_2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k2fqk")
+dialogue_file = ExtResource("2_aq7sr")

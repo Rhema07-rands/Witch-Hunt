@@ -1,0 +1,35 @@
+~ Chapter_4_1
+do play_first_animation()
+Echidna: Hey Coco...
+Coco: ...
+- Call out to him aggressively
+	Echidna: COCO! ANSWER ME WHEN I'M FUCKING TALKING TO YOU!!
+	do play_second_animation()
+	Coco: Well Coco's not my fucking name now is it?
+	Echidna: You name is whatever the fuck i say it is
+	Echidna: I could have called you a bag of worms
+	Echidna: or toothpaste
+	Echidna: or even Shit!
+	Echidna: Because I am your master and you are my slave
+	Echidna: Is that clear?
+	Coco: Yes ma'am
+	Echidna: Good Boy~
+	Echidna: Now...show me the way through this cave
+	do play_third_animation()
+	Coco: ...Yes ma'am
+- Call out to him frustrated
+	Echidna: COCO!!!
+	do play_second_animation()
+	Coco: Urgh! What do you want?
+	Echidna: Coco just show me the way, I'm not even asking for much.
+	Coco: ....
+	Echidna: Ok how about this, You obey me and I'll release you
+	Coco: 😯
+	Echidna: After we rescue my sister
+	Coco: 😑
+	Coco: Urgh! Fine
+	Echidna: Now help me navigate this cave
+	Coco: (Oh I'll help you naavigate alright...)
+	do play_third_animation()
+	Coco: Tch! Whatever
+=> END

@@ -1,0 +1,22 @@
+~ Chapter_1_8_2_5
+Echidna: Hmph! Weakass Monsters.
+Narrator: Suddenly you hear an intense scream.
+AHHHHHHHHHHHH!!!!!
+Echidna: THAT SCREAM...CITELA!!!
+Narrator: The monsters have kidnapped your sister and are getting away.
+Echidna: IF ONLY I HAD CHECKED UP ON HER FIRST! NOOOOOO!!
+do play_first_animation()
+Narrator: You run after the monster but are stopped by another Goblin
+Echidna: What the...? Another one?
+Goblin-B: YOU WILL PAY FOR KILLING MY BROTHER!
+Echidna: I DON'T HAVE TIME FOR THIS!!!
+- TRY TO AVOID THE GOBLIN
+	do play_second_animation()
+	Narrator: You try to avoid the Goblin but it ends up giving you a fatal wound on your back
+	YOU DIED!
+	Echida: Ci....te...la...No...
+	do play_third_animation()
+	- RETURN
+		do Return()
+- FIGHT THE GOBLIN
+=> END

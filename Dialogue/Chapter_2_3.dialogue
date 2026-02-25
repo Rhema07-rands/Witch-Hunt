@@ -1,0 +1,49 @@
+~ Chapter_2_3
+do play_first_animation()
+Echidna: Hey Slime Spirit, How's it going
+do play_second_animation()
+Slime Spirit: ...
+*Awkward Silence*
+Slime Spirit: ...um it's going good...i guess 
+Echidna: Well thats cool, i just wanted to pass through.
+Echidna: Do you mind letting me through?
+Slime Spirit: WHAT? NO! WHY THE HELL WOULD I DO THAT?
+Echidna: Please you have to understand, I need thiiss.
+Echidna: My sister is in trouble and i need to save her.
+Slime Spirit: No 
+Slime Spirit: I have orders from my boss to not let anyone pass through.
+Echidna: Your boss? Who's that?
+Slime Spirit: He's only the greatest and strongest monster of all time, you couldnt even begin to imagine his level of power
+Slime Spirit: He is the one and only #$%^&*
+Echidna: Sorry?
+Slime Spirit: #$%^&*
+Echidna: Come again?
+Slime Spirit: Oh i see whats happening, His name doesnt have a human tongue translation, That's how great my boss is.
+Narrator: Holy Glaze 💀
+Echidna: Ah i see.
+Slime Spirit: He has claimed this area from the humans and has turned it into monster territory
+Slime Spirit: I even have direct orders to kill an human on sight....but you're a witch so i dont have any reason to kill you.
+Slime Spirit: ...Unless you give me one.
+
+Echidna: What? No! I just wanna pass through, thats all!
+Echidna: How about this, i'm actually a messenger with a very important message for your boss and if you let me through, I'll make sure to tell about how much of a good underling you are.
+Slime Spirit: ....
+Slime Spirit: You'd do that for me?
+Echidna: Yes Of course, what are friends for.
+Narrator: What? Friends? Didnt yall just meet?
+Slime Spirit: .... You can pass
+Echidna: Oh thank you thank you thank you.
+Slime Spirit: Hahahaha no problem.
+do! play_sixth_animation()
+Narrator: As you try to pass the Slime Spirt trys to take a swing at you. HA I FUCKING KNEW IT!
+Echidna: now CHARGE
+do! play_third_animation()
+Slime Spirit: Huh?! WHAT IN THE?!
+do! play_fourth_animation()
+Slime Spirit: AHHHHAHHHHHHHGGGGRRH!!!!!
+WHOOOSSSHHH!!!!
+Echidna: ...
+do play_fifth_animation()
+Echidna: (Charge lets me tame any spirit depending on if i defeat them or make them drop their guard)
+Echidna: (This spirit's powers will definitely come in handy)
+=> END

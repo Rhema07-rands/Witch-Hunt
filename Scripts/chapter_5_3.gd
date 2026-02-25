@@ -1,0 +1,41 @@
+extends Control
+@onready var charge: AnimatedSprite2D = $Charge
+@onready var witch: AnimatedSprite2D = $Witch
+@onready var slime_spirit: AnimatedSprite2D = $"Slime Spirit"
+@onready var sister_s_friend: AnimatedSprite2D = $"Sister's Friend"
+@onready var attacked: AnimationPlayer = $Witch/attacked
+
+@export var dialogue_file: DialogueResource
+
+func _ready():
+	await get_tree().create_timer(2.5).timeout
+	DialogueManager.show_dialogue_balloon(dialogue_file, "Chapter_5_3")
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+
+func _on_dialogue_ended(conversation_name):
+	print("Dialogue ended:", conversation_name)
+	call_deferred("_go_to_next_scene")
+
+func _go_to_next_scene():
+	print("Changing to next scene...")
+	if is_inside_tree():
+		get_tree().change_scene_to_file("res://Scenes/victory_screen_4.tscn")
+	else:
+		print("Not inside tree anymore!")  # Replace with your actual next scene
+
+func play_first_animation():
+	sister_s_friend.play("punch")
+	await get_tree().create_timer(0.2).timeout
+	witch.play("hurt")
+	attacked.play("hurt")
+	await attacked.animation_finished
+	sister_s_friend.play("idle")
+	witch.play("idle")
+
+func play_second_animation():
+	witch.play("Death")
+
+@export var Skip : PackedScene
+
+func _on_skip_button_pressed() -> void:
+	get_tree().change_scene_to_packed(Skip)

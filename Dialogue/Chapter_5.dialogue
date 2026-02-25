@@ -1,0 +1,7 @@
+~ Chapter_5
+do play_first_animation()
+Narrator: Thanks to Coco's guidiance you reach a part of the cave with a prisoner and a General monster spirit, Guarding the prison cell
+do! play_second_animation()
+Narrator: This General Spirit is a lot like Coco and even the same rank...
+Narrator: But a lot Stronger
+=> END

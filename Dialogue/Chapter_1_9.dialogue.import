@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bhrpwwwicipym"
+path="res://.godot/imported/Chapter_1_9.dialogue-e6200f89e2b01f7fbb1a9af8a6e438fe.tres"
+
+[deps]
+
+source_file="res://Dialogue/Chapter_1_9.dialogue"
+dest_files=["res://.godot/imported/Chapter_1_9.dialogue-e6200f89e2b01f7fbb1a9af8a6e438fe.tres"]
+
+[params]
+
+defaults=true

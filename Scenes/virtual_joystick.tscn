@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://co4wfkiyat2f6"]
+
+[ext_resource type="Script" uid="uid://cm6cushus64m7" path="res://Scripts/virtual_joystick.gd" id="1_y6g67"]
+[ext_resource type="Texture2D" uid="uid://kgegtvvkasmh" path="res://textures/VirtualJoystickPack/Joystick.png" id="2_ubht3"]
+[ext_resource type="Texture2D" uid="uid://bwa5fpygwbwkw" path="res://textures/VirtualJoystickPack/LargeHandleFilledGrey.png" id="3_d6xv6"]
+
+[node name="VirtualJoystick" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 300.0
+pivot_offset = Vector2(150, 150)
+script = ExtResource("1_y6g67")
+use_textures = true
+use_custom_max_length = true
+base_texture = ExtResource("2_ubht3")
+knob_texture = ExtResource("3_d6xv6")
+mode = 1
+smooth_reset = true
+change_opacity_when_touched = true
+use_input_actions = true

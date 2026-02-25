@@ -1,0 +1,364 @@
+[gd_scene load_steps=23 format=3 uid="uid://cuf5go62te0l8"]
+
+[ext_resource type="Script" uid="uid://822t2be723tb" path="res://Scripts/level_selector.gd" id="1_g3msu"]
+[ext_resource type="Texture2D" uid="uid://dp2fauc4t321b" path="res://Menu/Levels/01.png" id="2_oef0k"]
+[ext_resource type="Texture2D" uid="uid://dm615vsts2bei" path="res://Menu/Levels/02.png" id="3_2h1o8"]
+[ext_resource type="FontFile" uid="uid://d30xm2hkn3vfc" path="res://fonts/PixelOperator8-Bold.ttf" id="3_jgeg8"]
+[ext_resource type="Texture2D" uid="uid://c3pau07552uhb" path="res://Menu/Levels/03.png" id="4_jgeg8"]
+[ext_resource type="Texture2D" uid="uid://dxgyr8f4t78p4" path="res://Menu/Buttons/Close.png" id="5_bivqt"]
+[ext_resource type="Texture2D" uid="uid://dqonxdpwbint3" path="res://Menu/Levels/04.png" id="5_oto5v"]
+[ext_resource type="Texture2D" uid="uid://brba30xwejpbt" path="res://Menu/Levels/50.png" id="6_bivqt"]
+[ext_resource type="Script" uid="uid://p3n6rw1ef1yu" path="res://Scripts/camera_level_select_screen.gd" id="10_auv11"]
+[ext_resource type="PackedScene" uid="uid://lyvuybnetgo4" path="res://Scenes/level_select_screen_joystick.tscn" id="10_oto5v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oto5v"]
+radius = 31.4007
+
+[sub_resource type="Animation" id="Animation_uytha"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1.52588e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_q1av8"]
+resource_name = "slide_show"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1.52588e-05), Vector2(599, 264), Vector2(599, 264), Vector2(1168, -5), Vector2(1168, -5), Vector2(1914, 264), Vector2(1914, 264), Vector2(2642, 50), Vector2(2642, 50), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dkl5d"]
+_data = {
+&"RESET": SubResource("Animation_uytha"),
+&"slide_show": SubResource("Animation_q1av8")
+}
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q1av8"]
+distance = 19.9454
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uytha"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dkl5d"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bivqt"]
+distance = 67.0327
+
+[sub_resource type="Animation" id="Animation_oto5v"]
+resource_name = "Fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_auv11"]
+resource_name = "Fadw_to_black_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bivqt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_auv11"]
+_data = {
+&"Fade_to_black": SubResource("Animation_oto5v"),
+&"Fadw_to_black_1": SubResource("Animation_auv11"),
+&"RESET": SubResource("Animation_bivqt")
+}
+
+[node name="Level Selector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g3msu")
+
+[node name="Stage1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 244.0
+offset_right = 524.0
+offset_bottom = 261.0
+scale = Vector2(6.5793, 7.53979)
+texture_normal = ExtResource("2_oef0k")
+stretch_mode = 0
+
+[node name="STAGE 1" type="Label" parent="Stage1"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 20.0
+offset_right = 38.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("3_jgeg8")
+theme_override_font_sizes/font_size = 8
+text = "STAGE 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 518.0
+offset_right = 1126.0
+offset_bottom = 535.0
+scale = Vector2(6.5793, 7.53979)
+disabled = true
+texture_normal = ExtResource("3_2h1o8")
+texture_disabled = ExtResource("5_bivqt")
+stretch_mode = 0
+
+[node name="STAGE 2" type="Label" parent="Stage2"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 20.0
+offset_right = 38.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("3_jgeg8")
+theme_override_font_sizes/font_size = 8
+text = "STAGE 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1690.0
+offset_top = 257.0
+offset_right = 1709.0
+offset_bottom = 274.0
+scale = Vector2(6.5793, 7.53979)
+disabled = true
+texture_normal = ExtResource("4_jgeg8")
+texture_disabled = ExtResource("5_bivqt")
+stretch_mode = 0
+
+[node name="STAGE 3" type="Label" parent="Stage3"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 20.0
+offset_right = 38.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("3_jgeg8")
+theme_override_font_sizes/font_size = 8
+text = "STAGE 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage4" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2441.0
+offset_top = 529.0
+offset_right = 2460.0
+offset_bottom = 546.0
+scale = Vector2(6.5793, 7.53979)
+disabled = true
+texture_normal = ExtResource("5_oto5v")
+texture_disabled = ExtResource("5_bivqt")
+stretch_mode = 0
+
+[node name="STAGE 4" type="Label" parent="Stage4"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 20.0
+offset_right = 38.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("3_jgeg8")
+theme_override_font_sizes/font_size = 8
+text = "STAGE 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage5" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 3164.0
+offset_top = 305.0
+offset_right = 3183.0
+offset_bottom = 322.0
+scale = Vector2(6.5793, 7.53979)
+disabled = true
+texture_normal = ExtResource("6_bivqt")
+texture_disabled = ExtResource("5_bivqt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FINAL STAGE" type="Label" parent="Stage5"]
+layout_mode = 0
+offset_left = -30.7
+offset_top = 20.0
+offset_right = 51.3
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("3_jgeg8")
+theme_override_font_sizes/font_size = 8
+text = "FINAL STAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera_Body" type="CharacterBody2D" parent="."]
+position = Vector2(580, 320)
+collision_mask = 2
+script = ExtResource("10_auv11")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera_Body"]
+position = Vector2(-4, -16)
+shape = SubResource("CircleShape2D_oto5v")
+
+[node name="Camera2D" type="Camera2D" parent="Camera_Body"]
+position = Vector2(0, -1.52588e-05)
+limit_smoothed = true
+
+[node name="camera" type="AnimationPlayer" parent="Camera_Body/Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_dkl5d")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="level_select_screen_joystick" parent="CanvasLayer" instance=ExtResource("10_oto5v")]
+offset_left = 3.0
+offset_top = 278.0
+offset_right = -793.0
+offset_bottom = 11.0
+pivot_offset = Vector2(252, 190.5)
+mode = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1162, 635)
+rotation = -6.27044
+shape = SubResource("WorldBoundaryShape2D_q1av8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(595, 255)
+rotation = -3.13628
+shape = SubResource("WorldBoundaryShape2D_uytha")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(534, 320)
+rotation = 1.55489
+shape = SubResource("WorldBoundaryShape2D_dkl5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3316, 380)
+rotation = -1.57491
+shape = SubResource("WorldBoundaryShape2D_bivqt")
+
+[node name="Fade_to_black" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_auv11")
+}
+
+[node name="COMPLETED" type="Label" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 505.0
+offset_right = 816.0
+offset_bottom = 611.0
+theme_override_fonts/font = ExtResource("3_jgeg8")
+theme_override_font_sizes/font_size = 50
+text = "COMPLETED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="COMPLETED2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 966.0
+offset_top = 776.0
+offset_right = 1422.0
+offset_bottom = 882.0
+theme_override_fonts/font = ExtResource("3_jgeg8")
+theme_override_font_sizes/font_size = 50
+text = "COMPLETED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="COMPLETED3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1541.0
+offset_top = 510.0
+offset_right = 1997.0
+offset_bottom = 616.0
+theme_override_fonts/font = ExtResource("3_jgeg8")
+theme_override_font_sizes/font_size = 50
+text = "COMPLETED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="COMPLETED4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2290.0
+offset_top = 804.0
+offset_right = 2746.0
+offset_bottom = 910.0
+theme_override_fonts/font = ExtResource("3_jgeg8")
+theme_override_font_sizes/font_size = 50
+text = "COMPLETED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="COMPLETED5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3010.0
+offset_top = 588.0
+offset_right = 3466.0
+offset_bottom = 694.0
+theme_override_fonts/font = ExtResource("3_jgeg8")
+theme_override_font_sizes/font_size = 50
+text = "COMPLETED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Stage1" to="." method="_on_stage_1_pressed"]
+[connection signal="pressed" from="Stage2" to="." method="_on_stage_2_pressed"]
+[connection signal="pressed" from="Stage3" to="." method="_on_stage_3_pressed"]
+[connection signal="pressed" from="Stage4" to="." method="_on_stage_4_pressed"]
+[connection signal="pressed" from="Stage5" to="." method="_on_stage_5_pressed"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b33hsml65km8j"]
+
+[ext_resource type="Script" uid="uid://bbnu1ex78digl" path="res://Scripts/chapter_5_1_5.gd" id="1_7agxc"]
+[ext_resource type="Resource" uid="uid://0j1envo4do16" path="res://Dialogue/Chapter_5_1_5.dialogue" id="2_8fu2r"]
+
+[node name="Chapter 5 1 5" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7agxc")
+dialogue_file = ExtResource("2_8fu2r")

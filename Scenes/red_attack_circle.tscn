@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://cm3w6ndm5lumm"]
+
+[ext_resource type="Script" uid="uid://bum5m3sqyw1s3" path="res://Scripts/red_attack_circle.gd" id="1_vfvrf"]
+[ext_resource type="Texture2D" uid="uid://cu670mb4jxqry" path="res://mage_atk2.png" id="2_q23jy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4uv5"]
+atlas = ExtResource("2_q23jy")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5owei"]
+atlas = ExtResource("2_q23jy")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh2to"]
+atlas = ExtResource("2_q23jy")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmsoa"]
+atlas = ExtResource("2_q23jy")
+region = Rect2(384, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys2qi"]
+atlas = ExtResource("2_q23jy")
+region = Rect2(512, 64, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nql5i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4uv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5owei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh2to")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5owei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh2to")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmsoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys2qi")
+}],
+"loop": false,
+"name": &"blast_attack_1",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vfvrf"]
+radius = 5.00535
+height = 27.9996
+
+[node name="RedAttackCircle" type="Area2D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_vfvrf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nql5i")
+animation = &"blast_attack_1"
+frame = 6
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 10)
+rotation = -1.57622
+shape = SubResource("CapsuleShape2D_vfvrf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

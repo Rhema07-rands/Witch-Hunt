@@ -1,0 +1,22 @@
+~ Chapter_2_1
+Echidna: Ow my head
+Echidna: ...
+Echidna: I have to find Citela
+Echidna: ...But that means
+Echidna: I have to go through the Forest
+Echidna: ...I could go by day and hide by night
+Echidna: But i dont have much time, who knows what kind of deprivities they are putting her through
+Echidna: I'll have to fight any monster that gets in my way.
+Echidna: ...but now that i think about it, the sun's been out all day and night, but the monster were able to come out regardless
+Echidna: How is this even possible.
+Echidna: First, The sun shouldn't be out 24/7
+Echidna: Second, The monsters shouldn't be out when the sun's out too, that's the whole reason they live in caves.
+Echidna: I've heard of skills that can let monsters roam free during the day but none about keeping the sun still.
+Echidna: ...This is becoming more than i can handle.
+Echidna: Can i really save Citela?
+- Rescue Her
+	Echidna: NO! I can do this.
+	Echidna: Citela, please wait for me.
+- Abandon
+	do coward()
+=> END

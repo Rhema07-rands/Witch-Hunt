@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://oe71i1v158j8"]
+
+[ext_resource type="Script" uid="uid://n4n7ww1ht7i2" path="res://Scripts/victory_screen.gd" id="1_mubwb"]
+[ext_resource type="FontFile" uid="uid://d30xm2hkn3vfc" path="res://fonts/PixelOperator8-Bold.ttf" id="1_oq8vb"]
+[ext_resource type="Texture2D" uid="uid://dj72ok8ui1ggh" path="res://Menu/Buttons/Next.png" id="3_vrh3u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mubwb"]
+bg_color = Color(0.466667, 0.568627, 0.964706, 0.505882)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.7449, 0.659114, 0.997823, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_dbb0g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vrh3u"]
+resource_name = "pop_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m5bpc"]
+_data = {
+&"RESET": SubResource("Animation_dbb0g"),
+&"pop_up": SubResource("Animation_vrh3u")
+}
+
+[node name="Victory Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mubwb")
+
+[node name="Victory Screen" type="Node2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Victory Screen" type="Label" parent="Victory Screen"]
+offset_left = 446.0
+offset_top = 127.0
+offset_right = 869.0
+offset_bottom = 529.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_oq8vb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mubwb")
+
+[node name="Victory Label" type="Label" parent="Victory Screen"]
+offset_left = 523.0
+offset_top = 183.0
+offset_right = 812.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("1_oq8vb")
+theme_override_font_sizes/font_size = 30
+text = "    STAGE
+COMPLETED"
+
+[node name="Next Stage" type="TextureButton" parent="Victory Screen"]
+offset_left = 617.0
+offset_top = 388.0
+offset_right = 705.0
+offset_bottom = 469.0
+texture_normal = ExtResource("3_vrh3u")
+stretch_mode = 0
+
+[node name="Congrats" type="Label" parent="Victory Screen"]
+offset_left = 531.0
+offset_top = 286.0
+offset_right = 796.0
+offset_bottom = 334.0
+theme_override_fonts/font = ExtResource("1_oq8vb")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+paragraph_separator = " \\n"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Victory Screen"]
+libraries = {
+&"": SubResource("AnimationLibrary_m5bpc")
+}
+
+[connection signal="pressed" from="Victory Screen/Next Stage" to="." method="_on_next_stage_pressed"]

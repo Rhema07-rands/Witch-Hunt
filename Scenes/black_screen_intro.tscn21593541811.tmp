@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d17cuh7wo5gcf"]
+
+[ext_resource type="Script" uid="uid://befqfbqfaxbki" path="res://Scripts/black_screen_intro.gd" id="1_2arh0"]
+[ext_resource type="Resource" uid="uid://02go577psxeb" path="res://Dialogue/intro_dialogue.dialogue" id="2_2ksgi"]
+
+[node name="Black Screen Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -4.0
+offset_right = -4.0
+script = ExtResource("1_2arh0")
+dialogue_file = ExtResource("2_2ksgi")

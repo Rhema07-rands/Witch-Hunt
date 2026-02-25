@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc7k4h17235jf"]
+
+[ext_resource type="Texture2D" uid="uid://bmp0p8cnoe38x" path="res://Mobile Buttons/2.png" id="1_k4nhr"]
+[ext_resource type="Texture2D" uid="uid://dk1thwqc8ch65" path="res://Mobile Buttons/5.png" id="4_pwth0"]
+[ext_resource type="Texture2D" uid="uid://cwrxat34dnu22" path="res://Mobile Buttons/6.png" id="5_y32fe"]
+[ext_resource type="Texture2D" uid="uid://wc2dps3gb2yq" path="res://Mobile Buttons/7.png" id="6_miyui"]
+[ext_resource type="PackedScene" uid="uid://co4wfkiyat2f6" path="res://Scenes/virtual_joystick.tscn" id="7_21kh3"]
+
+[node name="Controls" type="CanvasLayer"]
+
+[node name="up" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(985, 347)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("1_k4nhr")
+action = "jump"
+
+[node name="attack1" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(987, 475)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_pwth0")
+action = "attack"
+
+[node name="attack2" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(861, 475)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("5_y32fe")
+action = "charge"
+
+[node name="dash" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(1111, 475)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("6_miyui")
+action = "dash"
+
+[node name="VirtualJoystick" parent="." instance=ExtResource("7_21kh3")]
+offset_left = 48.0
+offset_top = 300.0
+offset_right = 348.0
+offset_bottom = 600.0

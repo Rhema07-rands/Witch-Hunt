@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://mt5wfpu7a652"]
+
+[ext_resource type="Texture2D" uid="uid://bmp0p8cnoe38x" path="res://Mobile Buttons/2.png" id="1_er52e"]
+[ext_resource type="Texture2D" uid="uid://dk1thwqc8ch65" path="res://Mobile Buttons/5.png" id="4_03xom"]
+[ext_resource type="Texture2D" uid="uid://cwrxat34dnu22" path="res://Mobile Buttons/6.png" id="5_l8kkv"]
+[ext_resource type="Texture2D" uid="uid://wc2dps3gb2yq" path="res://Mobile Buttons/7.png" id="6_p5xpo"]
+[ext_resource type="PackedScene" uid="uid://co4wfkiyat2f6" path="res://Scenes/virtual_joystick.tscn" id="7_5budl"]
+[ext_resource type="Texture2D" uid="uid://dyemrwx7sxht3" path="res://Mobile Buttons/8.png" id="7_6riyq"]
+[ext_resource type="Texture2D" uid="uid://ddo3bm8qelqax" path="res://Mobile Buttons/1.png" id="8_5budl"]
+
+[node name="Controls" type="CanvasLayer"]
+
+[node name="up" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(962, 361)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("1_er52e")
+action = "jump"
+
+[node name="attack1" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(960, 484)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_03xom")
+action = "attack"
+
+[node name="attack2" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(827, 486)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("5_l8kkv")
+action = "charge"
+
+[node name="dash" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(1093, 485)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("6_p5xpo")
+action = "dash"
+
+[node name="transform" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(1091, 363)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("7_6riyq")
+action = "transform"
+
+[node name="heal" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(828, 361)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("8_5budl")
+action = "heal"
+
+[node name="VirtualJoystick" parent="." instance=ExtResource("7_5budl")]
+offset_left = 48.0
+offset_top = 300.0
+offset_right = 348.0
+offset_bottom = 600.0

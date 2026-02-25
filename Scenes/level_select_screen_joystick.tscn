@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://lyvuybnetgo4"]
+
+[ext_resource type="Script" uid="uid://sfseh8un0t87" path="res://Scripts/touch_screen_joystick.gd" id="1_s02js"]
+[ext_resource type="Texture2D" uid="uid://3s2n2pi4u3p4" path="res://textures/VirtualJoystickPack/JoystickSplitted.png" id="2_53ano"]
+[ext_resource type="Texture2D" uid="uid://bwa5fpygwbwkw" path="res://textures/VirtualJoystickPack/LargeHandleFilledGrey.png" id="3_ifclj"]
+
+[node name="level_select_screen_joystick" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -6.0
+offset_right = -799.0
+offset_bottom = -298.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(183.5, 178)
+script = ExtResource("1_s02js")
+use_textures = true
+base_texture = ExtResource("2_53ano")
+knob_texture = ExtResource("3_ifclj")
+mode = 1
+smooth_reset = true
+change_opacity_when_touched = true
+use_input_actions = true

@@ -1,0 +1,12 @@
+~ Chapter_2_2
+do play_first_animation()
+Echidna: Wait...What the...? Is that a Slime Spirit
+Echidna: Again, How are these monsters out in broad day light
+Echidna: Anyway, Its seems it's blocking my path.
+Echidna: Maybe if i ask nicely he'll let me through.
+- Fight em
+	Echidna: Nah I think imma kick his ass.
+	do fight()
+- Ask Nicely
+	Echidna: Yeah I'll do that.
+=> END

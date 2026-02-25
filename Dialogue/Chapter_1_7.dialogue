@@ -1,0 +1,22 @@
+~ Chapter_1_7
+Narrator: Few Hours Later...
+Narrator: Echidna was on her roof top relaxing when suddenly... 
+CRASH!!!!
+Echidna's Thoughts: (WHAT THE HELL WAS THAT???)
+UNKNOWN: GROWL!!!
+Echidna's Thoughts: (WHAT THE HELL? ARE THOSE...MONSTERS?)
+Narrator: Under normal circumstance, living in such a dangerous forest, the sisters have put a barrier around their house to protect them from these creatures of the night.
+Narrator: But now....something is terribly wrong.
+Echidna's Thoughts: (Shit! What should I do?)
+- Check up on your sister
+	Echidna's Thoughts: (I have to check up on Citela.)
+	Echidna's Thoughts: (Fuck! I hope she's ok.) 
+- Take on all the monsters
+	Echidna's Thoughts: (I have to take care of these monsters before anyone gets hurt.)
+	Echidna: ALRIGHT!....BRING IT ON!!!
+	do ITK()
+- Run away and abandon everything
+	Echidna's Thoughts: (Fuck this shit I'm out!)
+	Runs Away...
+	do coward()
+=> END

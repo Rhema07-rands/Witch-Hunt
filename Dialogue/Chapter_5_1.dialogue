@@ -1,0 +1,33 @@
+~ Chapter_5_1
+Echidna: Um..Coco...What the hell is that?
+Coco: That's the monster that kidnapped your sister
+Echidna: You sure? Cuz the person in that prision cell looks nothing like my sister
+Coco: Maybe she's in a different cell, being guarded by a different Monster
+Coco: Who knows😊
+- Crash out
+	Echidna: But you said you knew the way
+	Echidna: You said you'd take me to her
+	Echidna: We had a deal
+	Coco: No i never said any of that, i was just showing you the way i knew
+	Coco: This is what i remember
+	Echidna: Oh yeah? then who tf is that?
+	Coco: Thats probably some random general lower ranking than me, our hierachy is weird like that
+	Coco: Beat him, ask for your sister and be on your way, simple
+	Echidna: Oh I'll beat em, but I'm not doing it alone
+	Echidna: You're gonna help me with that
+	Coco: Eh?
+	Echidna: CONVERT!
+	do! play_first_animation()
+	Coco: Wait wait wait wait no no no no
+	do! play_second_animation()
+	Echidna: (This Spirit is really starting to get on my nerves)
+?: Who's there?!
+do! play_fifth_animation()
+Echidna: Oh shit!!!!
+do play_third_animation()
+Xaphanor: Come out! So that I Xaphanor shall make you meet your maker!
+Xaphanor: Don't even try to run away! You were dead from the moment you stepped into this cave!
+Xaphanor: Now face me, Show me your motivation!!!
+do play_fourth_animation()
+Echidna: (He's a battle hungry maniac, isn't he?)
+=> END
